@@ -3,17 +3,19 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: eksctl-test
+  name: eks-prog
   region: us-east-1
 
 nodeGroups:
-  - name: ng1-public
-    instanceType: t3.micro
-    desiredCapacity: 2
-  
+  - name: ng-default
+    instanceType: t3.medium
+    minSize: 1
+    maxSize: 3
+    desiredCapacity: 2  
+
 managedNodeGroups:
   - name: ng2-managed
-    instanceType: t3.micro
+    instanceType: t3.medium
     minSize: 1
     maxSize: 3
     desiredCapacity: 2  
