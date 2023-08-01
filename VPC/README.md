@@ -14,4 +14,8 @@ https://docs.aws.amazon.com/vpc/latest/userguide/subnet-sizing.html
     `10.0.0.3`: Reserved by AWS for future use.  
 
     `10.0.0.255`: Network broadcast address. AWS do not support broadcast in a VPC, therefore we reserve this address.  
- 
+
+ ## VPC Peering
+ - Create VPC peering
+ - Accept the peering request
+ - Add route table entry in both VPC's RT with CIDR range & target as VPC Perring connection name
