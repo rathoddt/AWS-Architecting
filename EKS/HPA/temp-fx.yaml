@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firefox-demo
+  namespace: firefox-hpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: chrome-demo
+        image: 490516395361.dkr.ecr.ap-south-1.amazonaws.com/projectx_firefox_image:latest
+        ports:
+        - containerPort: 6901
+        envFrom:
+        - secretRef:
+            name: vnc-pw
+        volumeMounts:
+        - name: firefox-demo-data
+          mountPath: /home/kasm-user/.config/firefox-chrome/Default
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
+        resources:
+          limits: 
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 200m
+            memory: 500Mi
+      volumes:
+      - name: firefox-demo-data
+        persistentVolumeClaim:
+          claimName: chrome-efs-claim

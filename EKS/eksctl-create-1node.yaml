@@ -1,0 +1,22 @@
+--- 
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-demo
+  region: us-east-1
+  version: "1.27"
+
+nodeGroups:
+  - name: ng-default
+    instanceType: t3.medium
+    minSize: 1
+    maxSize: 1
+    desiredCapacity: 1  
+
+# managedNodeGroups:
+#   - name: ng2-managed
+#     instanceType: t3.medium
+#     minSize: 1
+#     maxSize: 3
+#     desiredCapacity: 2  
