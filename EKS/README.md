@@ -64,3 +64,29 @@ eksctl create nodegroup --cluster=eksdemo1 \
 
 aws eks --region us-east-1 update-kubeconfig --name eksdemo1
 ```
+### Connecting to RDS DB
+```
+kubectl run -it --rm --image=mysql:latest --restart=Never mysql-client -- mysql -h usermgmtdb.c0vquc02u7ix.us-east-1.rds.amazonaws.com -u dbadmin -pdbpassword11
+
+arn:aws:iam::238708039300:policy/AWSLoadBalancerControllerIAMPolicy
+
+eksctl create iamserviceaccount \
+  --cluster=eksdemo1 \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --attach-policy-arn=arn:aws:iam::238708039300:policy/AWSLoadBalancerControllerIAMPolicy \
+  --override-existing-serviceaccounts \
+  --approve
+```
+
+
+```
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+  -n kube-system \
+  --set clusterName=eksdemo1 \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller \
+  --set region=us-east-1 \
+  --set vpcId=vpc-047ac629ed2582082 \
+  --set image.repository=public.ecr.aws/eks/aws-load-balancer-controller
+  ```
