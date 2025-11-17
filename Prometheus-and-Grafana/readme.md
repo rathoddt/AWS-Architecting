@@ -5,7 +5,6 @@ sudo apt-get update
 pwd
 whoami
 wget https://github.com/prometheus/prometheus/releases/download/v3.7.2/prometheus-3.7.2.linux-amd64.tar.gz
-sudo group add --system prometheus
 sudo groupadd --system prometheus
 sudo useradd -s /sbin/nologin --system -g prometheus prometheus
 sudo mkdir /var/lib/prometheus
