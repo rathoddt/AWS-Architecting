@@ -19,6 +19,12 @@ sudo mv prometheus promtool /usr/local/bin/
 prometheus --version
 sudo mv prometheus.yml /etc/prometheus/
 ls /etc/prometheus/
+
+```
+
+Creating service for Prometheus
+
+```
 sudo tee /etc/systemd/system/prometheus.service<<EOF
 [Unit]
 Description=Prometheus
@@ -36,6 +42,9 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+
+```
 sudo chown -R prometheus:prometheus /etc/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus/*
 sudo chmod 775 /etc/prometheus
@@ -49,6 +58,4 @@ sudo systemctl daemon-reload
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
 systemctl status prometheus
-history
-history -w /dev/stdout
 ```
