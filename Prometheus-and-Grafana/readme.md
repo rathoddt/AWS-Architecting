@@ -127,3 +127,16 @@ sudo systemctl status node.service
 sudo systemctl enable node.service 
 sudo systemctl status node.service
 ```
+
+### Alerts
+```
+ls /etc/prometheus/rules
+sudo nano /etc/prometheus/rules/alerts.yaml
+sudo nano /etc/prometheus/prometheus.yml 
+sudo systemctl stop prometheus.service 
+sudo systemctl daemon-reload
+sudo systemctl start prometheus.service 
+sudo systemctl status prometheus.service 
+cat /etc/prometheus/rules/alerts.yaml
+```
+<b> https://samber.github.io/awesome-prometheus-alerts/rules.html</b>
