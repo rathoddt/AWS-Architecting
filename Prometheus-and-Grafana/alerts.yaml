@@ -1,0 +1,5 @@
+groups:
+  - name: Alerts
+    rules:
+    - alert: Is  node exporter up
+      expr: up{job="application-server"}==0
