@@ -59,3 +59,71 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 systemctl status prometheus
 ```
+### Setting up Node Exporter - Ubuntu
+```
+sudo apt get update
+sudo apt update
+sudo apt get upgrade
+sudo apt upgrade
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+ls -lrth
+tar -xvzf node_exporter-1.10.2.linux-amd64.tar.gz 
+cd node_exporter-1.10.2.linux-amd64/
+ls
+./node_exporter 
+ls
+cd node_exporter-1.10.2.linux-amd64/
+ls
+```
+Running node exporter
+```
+./node_exporter --web.listen-address=":9100" &
+```
+Running node expotter as a service
+```
+sudo groupadd --system prometheus
+sudo useradd -s /sbin/nologin --system -g prometheus prometheus
+sudo mkdir /var/lib/node
+ls
+cd node_exporter-1.10.2.linux-amd64/
+ls
+sudo mv node_exporter /var/lib/node/
+ls /var/lib/node
+sudo nano /etc/systemd/system/node.service
+```
+Service file
+```
+[Unit]
+Description=Prometheus Node Exporter
+Documentation=https://prometheus.io/docs/introduction/overview/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=prometheus
+Group=prometheus
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/var/lib/node/node_exporter
+
+SyslogIdentifier=prometheus_node_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Assigning permission to `prometheus` user
+```
+sudo chown -R prometheus:prometheus /var/lib/node
+sudo chown -R prometheus:prometheus /var/lib/node/*
+sudo chmod /var/lib/node
+sudo chmod 775 /var/lib/node
+sudo chmod 775 /var/lib/node/*
+sudo systemctl daemon-relaod
+sudo systemctl daemon-reload
+sudo systemctl start node.service 
+sudo systemctl status node.service 
+sudo systemctl enable node.service 
+sudo systemctl status node.service
+```
