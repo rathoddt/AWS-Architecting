@@ -1,0 +1,26 @@
+route:
+  receiver: admin
+  routes:
+  - receiver: 'urgent_receiver'
+    matchers:
+    - severity="Critical"
+
+receivers:
+- name: admin
+  email_configs:
+  - to: 'diliprathod.copywriter@gmail.com'
+    from: 'diliprathod.copywriter@gmail.com'
+    smarthost: smtp.gmail.com:587
+    auth_username: 'diliprathod.copywriter@gmail.com'
+    auth_identity: 'diliprathod.copywriter@gmail.com'
+    auth_password: '<app-password>'
+- name: 'urgent_receiver'
+  slack_configs:
+  - api_url: 'https://hooks.slack.com/services/<token>'
+
+inhibit_rules:
+- source_match:
+    team: "Team Alpha"
+  target_match:
+    team: "Team Beta"
+  equal: ['severity']
