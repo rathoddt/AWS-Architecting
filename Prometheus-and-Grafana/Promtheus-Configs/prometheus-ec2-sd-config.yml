@@ -40,5 +40,18 @@ scrape_configs:
       - targets: ["localhost:8000"]
       
   - job_name: "aws sd"
-    ec2_sd-configs:
-      - port: 9090 
+    ec2_sd_configs:
+      - port: 9090
+        region: us-east
+        filters: 
+          - name: tag:Name
+            values:
+              - dev-.*
+    relable_configs:
+      - source_labels: [__meta_ec2_tag_Name, __meta_ec2_private_ip]
+        target_label: instance
+      - source_labels: [__meta_ec2_tag_Name]
+        regex: dev-test-.*
+        action: drop
+        #action: keep
+        
