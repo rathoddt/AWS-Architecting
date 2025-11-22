@@ -128,7 +128,7 @@ sudo systemctl enable node.service
 sudo systemctl status node.service
 ```
 
-### Alerts
+## Setting up Alert Manager - Ubuntu
 ```
 ls /etc/prometheus/rules
 sudo nano /etc/prometheus/rules/alerts.yaml
