@@ -59,7 +59,7 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 systemctl status prometheus
 ```
-### Setting up Node Exporter - Ubuntu
+## Setting up Node Exporter - Ubuntu
 ```
 sudo apt get update
 sudo apt update
@@ -140,3 +140,24 @@ sudo systemctl status prometheus.service
 cat /etc/prometheus/rules/alerts.yaml
 ```
 <b> https://samber.github.io/awesome-prometheus-alerts/rules.html</b>
+
+## Setting up Push Gateway - Ubuntu
+
+```
+wget https://github.com/prometheus/pushgateway/releases/download/v1.11.2/pushgateway-1.11.2.linux-amd64.tar.gz
+tar -xvzf pushgateway-1.11.2.linux-amd64.tar.gz 
+./pushgateway-1.11.2.linux-amd64/pushgateway --help
+cd pushgateway-1.11.2.linux-amd64/
+sudo cp pushgateway /usr/local/bin/pushgateway
+ls -lrth /usr/local/bin
+sudo chown prometheus:prometheus /usr/local/bin
+sudo chown prometheus:prometheus /usr/local/bin/*
+ls -lrth /usr/local/bin
+
+sudo nano /etc/systemd/system/pushgateway.service
+sudo systemctl daemon-reload
+sudo systemctl start pushgateway.service 
+sudo systemctl status pushgateway.service 
+sudo systemctl enable pushgateway.service 
+sudo systemctl status pushgateway.service
+```
