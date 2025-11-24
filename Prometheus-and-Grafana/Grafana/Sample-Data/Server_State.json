@@ -1,0 +1,152 @@
+[
+   {
+      "Time":"2024-01-30T21:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-30T22:17:54.040Z",
+      "Device":"Server A",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-30T23:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T00:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T01:17:54.040Z",
+      "Device":"Server A",
+      "State":"off"
+   },
+   {
+      "Time":"2024-01-31T02:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T03:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T04:17:54.040Z",
+      "Device":"Server A",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-31T05:17:54.040Z",
+      "Device":"Server A",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T06:17:54.040Z",
+      "Device":"Server A",
+      "State":"off"
+   },
+   {
+      "Time":"2024-01-30T21:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-30T22:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-30T23:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T00:17:54.040Z",
+      "Device":"Server B",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-31T01:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T02:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T03:17:54.040Z",
+      "Device":"Server B",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-31T04:17:54.040Z",
+      "Device":"Server B",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T05:17:54.040Z",
+      "Device":"Server B",
+      "State":"off"
+   },
+   {
+      "Time":"2024-01-31T06:17:54.040Z",
+      "Device":"Server B",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-30T21:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-30T22:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-30T23:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T00:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T01:17:54.040Z",
+      "Device":"Server C",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-31T02:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T03:17:54.040Z",
+      "Device":"Server C",
+      "State":"on"
+   },
+   {
+      "Time":"2024-01-31T04:17:54.040Z",
+      "Device":"Server C",
+      "State":"off"
+   },
+   {
+      "Time":"2024-01-31T05:17:54.040Z",
+      "Device":"Server C",
+      "State":"In mantenaince"
+   },
+   {
+      "Time":"2024-01-31T06:17:54.040Z",
+      "Device":"Server C",
+      "State":"off"
+   }
+]
