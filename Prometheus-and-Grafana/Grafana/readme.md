@@ -42,3 +42,10 @@ show tables;
 select * from current;
 select * from status;
 ```
+
+Add following line to `/etc/mysql/my.cnf'
+```
+[mysqld]
+event_scheduler =on
+```
+
