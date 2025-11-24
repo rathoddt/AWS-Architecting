@@ -29,7 +29,7 @@ sudo mysql
 
 sudo cat /root/.mysql_history
 sudo cat /root/.mysql_history | python3 -c "import sys; print(''.join([l.encode('utf-8').decode('unicode-escape') for l in sys.stdin]))"
-``
+```
 MySQL Queries
 ```
 show databases;
