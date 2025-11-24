@@ -50,40 +50,8 @@ It is designed for:
 - AWS account with required IAM permissions  
 - Terraform v1.x installed  
 - AWS CLI configured:  
-  ```bash
+  ```
+
   aws configure
 
-%% Mermaid architecture diagram for AWS-Architecting repo
-flowchart LR
-  subgraph VPC [VPC (multi-az)]
-    direction TB
-    subgraph Public [Public Subnet]
-      ALB[ALB (Ingress)]
-      NAT[NAT Gateway]
-      Bastion[Bastion / JumpBox]
-    end
-    subgraph Private [Private Subnet]
-      EKS[EKS Cluster (workers)]
-      EC2ASG[EC2 AutoScaling Group]
-      RDS[RDS (Multi-AZ)]
-      EFS[EFS]
-    end
-  end
-
-  S3[S3 buckets]
-  CloudTrail[CloudTrail / Audit]
-  Monitoring[Prometheus + Grafana]
-  IAM[IAM / KMS]
-  Internet[Internet / Users]
-  CICD[CI/CD (CodeBuild / GitHub Actions)]
-
-  Internet --> ALB
-  ALB --> EKS
-  ALB --> EC2ASG
-  NAT --> Private
-  EKS --> Monitoring
-  EC2ASG --> Monitoring
-  RDS --> S3
-  CloudTrail --> S3
-  CICD --> ALB
-  S3 --> EKS
+```
