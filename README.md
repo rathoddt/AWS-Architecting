@@ -1,4 +1,3 @@
-# AWS-Architecting
 # AWS-Architecting  
 **Repository:** https://github.com/rathoddt/AWS-Architecting  
 
