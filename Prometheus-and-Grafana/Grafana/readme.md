@@ -47,5 +47,15 @@ Add following line to `/etc/mysql/my.cnf'
 ```
 [mysqld]
 event_scheduler =on
+
+[mysqld]
+bind-address =0.0.0.0  
+```
+
+Creating user to read data from MySQL server
+```
+CREATE USER 'YOUR_USER'@'SOURCE_IP' IDENTIFIED BY 'YOUR_PASSWORD';
+GRANT SELECT ON DB_YOU_MONITOR.* TO 'YOUR_USER'@'SOURCE_IP';
+FLUSH PRIVILEGES;
 ```
 
