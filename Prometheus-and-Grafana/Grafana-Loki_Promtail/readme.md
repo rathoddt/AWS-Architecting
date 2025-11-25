@@ -1,4 +1,3 @@
-
 # 🚀 Install and Configure Grafana Loki as a Systemd Service on Ubuntu
 
 > This guide walks you through installing Grafana Loki on Ubuntu, configuring it, and setting it up as a systemd service so it runs automatically on boot.
