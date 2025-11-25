@@ -43,6 +43,9 @@ chmod a+x loki
 cd /opt/loki
 wget https://raw.githubusercontent.com/grafana/loki/main/cmd/loki/loki-local-config.yaml
 mv loki-local-config.yaml loki-config.yaml
+
+#Replace tmp with opt
+sed -i 's#/tmp/loki#/opt/loki#g' loki-config.yaml
 ```
 
 ---
