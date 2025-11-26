@@ -86,6 +86,7 @@ influxdb3 <command> --token YOUR_AUTH_TOKEN
 ```
 influxdb3 --version
 influxdb3 show databases
+
 influxdb3 serve   --node-id=node0   \
 --http-bind=0.0.0.0:8181   \
 --object-store=file   \
