@@ -115,4 +115,8 @@ temperature,room=kitchen value=28
 temperature,room=bedroom1 value=26
 temperature,room=bedroom2 value=25
 "
+
+influxdb3 query --database "node0" "SHOW TABLES"
+
+influxdb3 write   --database node0   --token $INFLUXDB3_AUTH_TOKEN   --host http://localhost:8181   --file more_rowa.lp
 ```
