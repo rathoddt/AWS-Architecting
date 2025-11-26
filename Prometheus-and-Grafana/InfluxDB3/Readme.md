@@ -72,9 +72,34 @@ influxdb3 create token --admin
 export INFLUXDB3_AUTH_TOKEN=YOUR_AUTH_TOKEN
 ```
 
+
+
 ### Option 2: Command-Line Flag
 
 ```bash
 influxdb3 <command> --token YOUR_AUTH_TOKEN
 ```
 ---
+
+
+### Handy commands
+```
+influxdb3 --version
+influxdb3 show databases
+influxdb3 serve   --node-id=node0   \
+--http-bind=0.0.0.0:8181   \
+--object-store=file   \
+--data-dir /root/.influxdb/data   \
+--plugin-dir /root/.influxdb/plugins  &
+
+influxdb3 write   --database node0   \
+--token $INFLUXDB3_AUTH_TOKEN   \
+--host http://localhost:8181   \
+"temperature,room=living value=27"
+
+
+influxdb3 query   --database node0   \
+--token $INFLUXDB3_AUTH_TOKEN   -\
+-host http://localhost:8181   \
+"SELECT * FROM temperature"
+```
