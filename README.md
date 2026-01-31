@@ -49,8 +49,14 @@ It is designed for:
 - AWS account with required IAM permissions  
 - Terraform v1.x installed  
 - AWS CLI configured:  
-  ```
+```
 
   aws configure
+
+```
+
+Getting IP for ingress rule
+```
+curl https://checkip.amazonaws.com
 
 ```
