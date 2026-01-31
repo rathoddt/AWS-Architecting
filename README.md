@@ -50,13 +50,10 @@ It is designed for:
 - Terraform v1.x installed  
 - AWS CLI configured:  
 ```
-
-  aws configure
-
+aws configure
 ```
 
 Getting IP for ingress rule
 ```
 curl https://checkip.amazonaws.com
-
 ```
