@@ -17,7 +17,7 @@ variable "instance_type" {
 }
 variable "my_public_ip" {
 	description = "My local system public IP ..." 
-        default = "223.228.135.132/32"
+        default = "223.185.36.141/32"
 }
 variable "ami" {
 description = "amazon machine image"
